@@ -27,14 +27,14 @@ export const PolarAreaChart = ({ dataSource }: FormData) => {
       const titles: any = {
         comportamento: "Comportamento",
         planejamento: "Planejamento",
-        conhecimento: "conhecimento",
+        conhecimento: "Conhecimento",
         investimentos: "Investimentos",
         poupanca: "Poupança",
         consumo: "Consumo",
         mentalidade: "Mentalidade",
         patrimonio: "Patrimônio",
         aposentadoria: "Aposentadoria",
-        estadoAtual: "Estado atual",
+        estadoAtual: "Estado Atual",
       };
 
       const labelsArray = Object.keys(dataSource);
@@ -45,25 +45,27 @@ export const PolarAreaChart = ({ dataSource }: FormData) => {
       const newChart = new Chart(context, {
         type: "polarArea",
         data: {
-          // labels: labelsArray,
+          // labels: titlesArray,
           datasets: [
             {
+              label: "Níveis",
               data: valuesArray,
               borderWidth: 1,
             },
           ],
         },
         options: {
-          parsing: {
-            xAxisKey: "Questao",
-            yAxiskey: "nota",
-          },
           scales: {
             r: {
               angleLines: {
                 display: false,
               },
-              ticks: {},
+              suggestedMin: 0, // Valor mínimo do eixo
+              suggestedMax: 10, // Valor máximo do eixo
+              ticks: {
+                stepSize: 1, // Incremento do eixo
+                // beginAtZero: true,
+              },
               pointLabels: {
                 font: {
                   size: 14,
