@@ -77,7 +77,7 @@ export const useQueries = () => {
     },
     {
       name: "patrimonio",
-      title: "VII PATRIMÔNIO",
+      title: "VIII PATRIMÔNIO",
       query: `Dê uma nota de 0 a 10 para seu nível de
           satisfação sobre o seu patrimônio constituído. Você está satisfeito
           com tudo que criou até agora, ou seu nível para esse pilar ainda
